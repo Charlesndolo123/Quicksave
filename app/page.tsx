@@ -18,7 +18,48 @@ export default function Home() {
     }
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (!url.trim()) {
+      setMessage("Please enter a video link first.");
+      return;
+    }
+
+    setLoading(true);
+    setMessage("Checking your media link...");
+
+    try {
+      const response = await fetch("/api/media", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url.trim() }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setMessage(
+          data.message ||
+          data.error ||
+          "Media processing is not configured yet."
+        );
+        return;
+      }
+
+      setMessage("Your media link has been received.");
+    } catch {
+      setMessage(
+        "Unable to connect. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
     e.preventDefault();
 
     if (!url.trim()) {
