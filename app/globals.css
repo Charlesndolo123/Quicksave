@@ -1,0 +1,204 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #635bff;
+  --dark: #111827;
+  --muted: #667085;
+  --background: #f8f9fc;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: var(--dark);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid #eaecf0;
+  padding: 20px 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  color: #475467;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 85px 0 65px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  max-width: 780px;
+  margin: auto;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 22px auto 32px;
+}
+
+.downloader {
+  max-width: 720px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  background: white;
+  border: 1px solid #e4e7ec;
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(16,24,40,.07);
+}
+
+.downloader input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 15px;
+  font-size: 15px;
+}
+
+.download-btn {
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.platforms {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.platform {
+  background: white;
+  border: 1px solid #eaecf0;
+  padding: 12px 18px;
+  border-radius: 30px;
+  color: #475467;
+  font-size: 14px;
+}
+
+.section {
+  padding: 65px 0;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: white;
+  border: 1px solid #eaecf0;
+  padding: 28px;
+  border-radius: 16px;
+}
+
+.feature h3 {
+  margin: 14px 0 10px;
+}
+
+.feature p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+footer {
+  padding: 35px 0;
+  background: white;
+  border-top: 1px solid #eaecf0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .hero {
+    padding: 60px 0 45px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .downloader {
+    flex-direction: column;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
