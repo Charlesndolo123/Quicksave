@@ -60,30 +60,6 @@ export default function Home() {
     }
   }
 
-    e.preventDefault();
-
-    if (!url.trim()) {
-      setMessage("Please enter a video link first.");
-      return;
-    }
-
-    try {
-      const parsed = new URL(url.trim());
-
-      if (!["http:", "https:"].includes(parsed.protocol)) {
-        throw new Error("Invalid link");
-      }
-
-      setLoading(true);
-      setMessage(
-        "Link received. Media processing will be connected in a later development step."
-      );
-    } catch {
-      setMessage("Please enter a valid video URL.");
-    } finally {
-      setLoading(false);
-    }
-  }
 
   return (
     <>
